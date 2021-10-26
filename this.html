@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+
+    <h1>this is not confused anymore </h1>
+
+    <script>
+
+        const myObject = {
+            name: 'shadab ali ',
+            getFullName: function () {
+                console.log(this);
+                return 'Mr. ' + this.name;
+            }
+        }
+       
+        const anotherObj = {
+            name: 'khama ki',
+        }
+
+        // anotherObj.getFullName = myObject.getFullName;
+        // console.log(anotherObj.getFullName);
+
+        // myObject.getFullName();
+        // anotherObj.getFullName();
+
+
+
+        // i am use object in this class
+
+        function add( a , b) {
+            return (a+b);
+        }
+        const ok = add(4 , 5 );
+        console.log(ok);
+    
+
+    </script>
+
+</body>
+</html>
