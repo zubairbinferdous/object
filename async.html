@@ -7,14 +7,60 @@
     <title>Async</title>
 </head>
 <body>
+
+    <ul id="myList">
+
+    </ul>
+
      <script>
-         function loadData() {
-             fetch('https://jsonplaceholder.typicode.com/users')
-             .then(res => res.json)
-             .then(data => {
-                 
-             })
+
+        // async data loarding 
+
+        async function loadData() {
+            const responce = await fetch('https://jsonplaceholder.typicode.com/users');
+            const data = await responce.json();
+            return data
+        }
+        loadData().then(data => {
+            displayData(data);
+        });
+
+        // data lode  form api as by async ###########################
+
+        // async  function hello(name) {
+        //      return 'hello ' + name;
+        //  }
+        //  const result = hello('mofiz');
+        //  console.log(result);
+        //  result.then(res => console.log(res));
+
+
+        // data lode  form api as by loop ###########################
+
+        //  function loadData() {
+        //      fetch('https://jsonplaceholder.typicode.com/users')
+        //      .then(res => res.json())
+        //      .then(data => {
+        //          displayData(data);
+        //      })
+        //  }
+        //  loadData();
+
+         function displayData(data) {
+
+            const showName = document.getElementById('myList');
+             for (let i = 0; i < data.length; i++) {
+                 const user = data[i];
+                //  console.log(user);
+                const item = document.createElement('li');
+                item.innerText = user.name;
+                showName.appendChild(item);
+                
+             }
+             
          }
+
+
      </script>
 </body>
 </html>
