@@ -8,4 +8,3 @@ console.log(5555);
 //     console.log(i)
 // }
 
-console.log('zubair bin ferdous')
